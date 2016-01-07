@@ -39,7 +39,7 @@ return [
 	|
 	*/
 
-	'timezone' => 'UTC',
+	'timezone' => 'Asia/Bangkok',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -137,6 +137,12 @@ return [
 		'Illuminate\View\ViewServiceProvider',
 
 		/*
+		 * Laravel Collective Service Providers...
+		 * read file composer.json directory is package
+		 */
+		'Collective\Html\HtmlServiceProvider',
+
+		/*
 		 * Application Service Providers...
 		 */
 		'App\Providers\AppServiceProvider',
@@ -192,6 +198,10 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+
+//		aliases class from HTML & Form
+		'Form'		=> 'Collective\Html\FormFacade',
+		'HTML'		=> 'Collective\Html\HtmlFacade',
 
 	],
 

@@ -7,8 +7,6 @@
  */
 
 
-	echo '<link rel="shortcut icon" href="favicon.ico">';
-
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader

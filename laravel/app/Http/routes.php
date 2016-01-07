@@ -19,3 +19,13 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+
+Route::get('hello', 'HelloController@index');
+Route::get('hello/{id}/{content?}', 'HelloController@hello');
+Route::get('test/hello', function(){
+	return 'test';
+});
+Route::controller('test/test', 'HelloController');
+
+Route::resource('articles', 'ArticleController');
