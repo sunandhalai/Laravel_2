@@ -4,27 +4,14 @@
 
 
 @section('content')
+    <h1 class="page-title">Write a New article</h1>
 
-{!! Form::open(['url' => 'articles']) !!}
+    @include('errors.list')
 
-    <div class="form-group">
-        {!! Form::label('title', 'Title: ') !!}
-        {!! Form::text('title', null, ['class'=>'form-control']) !!}
-    </div>
+{!! Form::open(['url' => 'articles', 'files' => true]) !!}
 
-    <div class="form-group">
-        {!! Form::label('body', 'Body: ') !!}
-        {!! Form::textarea('body', null, ['class'=>'form-control']) !!}
-    </div>
-
-    <div class="form-group">
-        {!! Form::label('published_at', 'Publish on') !!}
-        {!! Form::date('published_at', \Carbon\Carbon::now()->format('Y-m-d'), ['class'=>'form-control']) !!}
-    </div>
-
-    <div class="form-group">
-        {!! Form::submit('Add Article', ['class'=>'form-control btn btn-primary']) !!}
-    </div>
+    @include('articles._form', ['submitButtonText' => '<i class="glyphicon glyphicon-plus"></i> Add Article'])
 
 {!! Form::close() !!}
 @endsection
+@stop

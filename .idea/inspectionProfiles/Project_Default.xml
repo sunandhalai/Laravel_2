@@ -6,7 +6,10 @@
     <inspection_tool class="IsEmptyFunctionUsageInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="REPORT_EMPTY_USAGE" value="false" />
     </inspection_tool>
-    <inspection_tool class="PhpUndefinedClassInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="MissingClassSpec" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PhpUndefinedClassInspection" enabled="true" level="TYPO" enabled_by_default="true">
+      <option name="DONT_REPORT_MULTI_RESOLVE" value="true" />
+    </inspection_tool>
     <inspection_tool class="PropertyCanBeStaticInspection" enabled="false" level="WARNING" enabled_by_default="false" />
   </profile>
 </component>

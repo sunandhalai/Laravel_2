@@ -5,6 +5,17 @@
 
 @section('content')
 
+    {{-- show user --}}
+    <div class="page-header">
+        <h1>{{ trans('site.article') }}</h1>
+        <p class="lead">
+            All articles
+            @if(Auth::check())
+                for &nbsp; {{ Auth::user()->name }}
+            @endif
+        </p>
+    </div>
+
     @foreach($articles as $value)
 
         <div class="panel panel-default">
@@ -20,7 +31,8 @@
             </div>
 
             <div class="panel-footer">
-                {{ $value->published_at }}
+                By <strong>{{ $value->user->name }}</strong>
+                {{ $value->published_at->diffForHumans() }}
             </div>
 
         </div>
@@ -28,3 +40,4 @@
     @endforeach
 
 @endsection
+@stop

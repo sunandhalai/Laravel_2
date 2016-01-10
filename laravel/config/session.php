@@ -29,7 +29,7 @@ return [
 	|
 	*/
 
-	'lifetime' => 120,
+	'lifetime' => 120, // time _token
 
 	'expire_on_close' => false,
 

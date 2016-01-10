@@ -41,12 +41,31 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="<?=url('articles/create')?>">New Article</a></li>
+                <li>
+                    <a href="{{ url('lang/en') }}"
+                       class="btn btn-default">EN</a>
+                </li>
+                <li>
+                    <a href="{{ url('lang/th') }}"
+                       class="btn btn-default">TH</a>
+                </li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
 
 <div class="container">
+
+    {{-- check error --}}
+    @if(session()->has('flash_message'))
+        {{-- alert box --}}
+        <div class="alert alert-info">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{ session()->get('flash_message') }}
+        </div>
+    @endif
 
     @yield('content')
 

@@ -29,3 +29,11 @@ Route::get('test/hello', function(){
 Route::controller('test/test', 'HelloController');
 
 Route::resource('articles', 'ArticleController');
+
+Route::get('lang/{lang}', function($lang){
+	$available = ['en', 'th'];
+	Session::put('locale', in_array($lang, $available)? $lang : Config::get('app.locale'));
+	return redirect()->back();
+});
+
+Route::controller('pages', 'PagesController');
